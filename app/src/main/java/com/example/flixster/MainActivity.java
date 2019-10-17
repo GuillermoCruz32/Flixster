@@ -5,15 +5,19 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster.adapters.MovieAdapter;
 import com.example.flixster.models.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Headers;
@@ -26,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RecyclerView rvMovies = findViewById(R.id.rvMovies);
+        movies = new ArrayList<>();
+
+        // Create the adapter
+        final MovieAdapter moviewAdapter = new MovieAdapter(this, movies);
+
+        // Set the adapter to the recyler view
+        rvMovies.setAdapter(moviewAdapter);
+
+        // Set a Layout Manager on the recyler view
+        rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed", new JsonHttpResponseHandler() {
@@ -36,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONArray results = jsonObject.getJSONArray("results");
                     Log.i("Guillermo", "Results: " + results.toString());
-                    movies = Movie.fromJSONArray(results);
+                    movies.addAll(Movie.fromJSONArray(results));
+                    moviewAdapter.notifyDataSetChanged();
                     Log.i("Guillermo", "Movies: " + movies.size());
                 } catch (JSONException e) {
                     Log.d("Guillermo", "Error: " + e);

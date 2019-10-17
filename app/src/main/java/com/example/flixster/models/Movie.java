@@ -19,6 +19,10 @@ public class Movie {
     }
 
     public static List<Movie> fromJSONArray(JSONArray movieJSONArray) throws JSONException {
+        // This function is expecting a JSON array, and from the JSON array the function will iterate through
+        // the array and expect to find a JSON object through each iteration. At each iteration, it will take only
+        // the "title", "overview", and "posterPath" from each JSON object, and create a new Movie class instance to hold
+        // the data. All of the new instances will then be added to the Array Movie.
         List<Movie> movies = new ArrayList<>();
         for (int i = 0; i < movieJSONArray.length(); i++){
             movies.add(new Movie(movieJSONArray.getJSONObject(i)));
