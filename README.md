@@ -8,7 +8,6 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 ## Flix Part 1
 
 ### User Stories
-`TODO://` In the **User Stories section below**, add an `x` in the `-[ ]` like this `- [x]` for any user story you complete. (🚫 Remove this paragraph after after checking off completed user stories)
 
 #### REQUIRED (10pts)
 - [x] (10pts) User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
@@ -23,12 +22,11 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
 
 ### App Walkthough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
 <img src="walkthough.gif" title="Video Walkthrough" alt="Video Walkthrough" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+The only real challenge that I faced happened when I was trying to create a recyler view object in my layout. Even after I added the nessecary libray in my gradle file, my layout did not regocnize the recyler view as an object in my layout. I could not create a proper recyler view object unless I first create an ImageView, and then create my recyler view. 
 
 ### Open-source libraries used
 
