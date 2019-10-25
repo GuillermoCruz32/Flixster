@@ -81,7 +81,7 @@ public class DetailActivity extends YouTubeBaseActivity {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("Guillermo", "OnSuccess");
-                // We need to add the unique YouTube video depending on the movie choosen
+                // We need to add the unique YouTube video depending on the movie that is choosen
                 if (movierating <= 5.0) {
                     youTubePlayer.cueVideo(Key);
                 }
