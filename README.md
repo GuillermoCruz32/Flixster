@@ -23,7 +23,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 `TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="walkthough2.gif" title="Second Video Walkthrough" alt="Video Walkthrough" width=250><br>
 
 ### Notes
 
@@ -53,7 +53,7 @@ I tried rounding the corners on my images, but something wasn't getting imported
 
 ### App Walkthough GIF
 
-<img src="walkthough.gif" title="Video Walkthrough" alt="Video Walkthrough" width=250><br>
+<img src="walkthough.gif" title="First Video Walkthrough" alt="Video Walkthrough" width=250><br>
 
 ### Notes
 The only real challenge that I faced happened when I was trying to create a recyler view object in my layout. Even after I added the nessecary libray in my gradle file, my layout did not regocnize the recyler view as an object in my layout. I could not create a proper recyler view object unless I first create an ImageView, and then create my recyler view. 
